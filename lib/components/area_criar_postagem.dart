@@ -1,14 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook/models/usuario.dart';
-class AreaCriarPostagem extends StatelessWidget {
 
+class AreaCriarPostagem extends StatelessWidget {
   final Usuario usuario;
 
-  const AreaCriarPostagem({
-    Key? key,
-    required this.usuario
-  }) : super(key: key);
+  const AreaCriarPostagem({Key? key, required this.usuario}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +19,16 @@ class AreaCriarPostagem extends StatelessWidget {
               CircleAvatar(
                 radius: 20,
                 backgroundColor: Colors.grey[200],
-                backgroundImage: CachedNetworkImageProvider(
-                  usuario.urlImagem
-                ),
+                backgroundImage: CachedNetworkImageProvider(usuario.urlImagem),
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               Expanded(
                   child: TextField(
-                    decoration: InputDecoration.collapsed(
-                        hintText: "No que você está pensando"
-                    ),
-                  )
-              )
+                decoration: InputDecoration.collapsed(
+                    hintText: "No que você está pensando"),
+              ))
             ],
           ),
           Divider(
@@ -46,37 +41,41 @@ class AreaCriarPostagem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TextButton.icon(
-                    onPressed: (){},
-                    icon: Icon(Icons.videocam, color: Colors.red,),
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.videocam,
+                      color: Colors.red,
+                    ),
                     label: Text(
-                        "Ao vivo",
-                      style: TextStyle(
-                        color: Colors.black
-                      ),
-                    )
+                      "Ao vivo",
+                      style: TextStyle(color: Colors.black),
+                    )),
+                VerticalDivider(
+                  width: 8,
                 ),
-                VerticalDivider(width: 8,),
                 TextButton.icon(
-                    onPressed: (){},
-                    icon: Icon(Icons.photo_library, color: Colors.green,),
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.photo_library,
+                      color: Colors.green,
+                    ),
                     label: Text(
                       "Foto",
-                      style: TextStyle(
-                          color: Colors.black
-                      ),
-                    )
+                      style: TextStyle(color: Colors.black),
+                    )),
+                VerticalDivider(
+                  width: 8,
                 ),
-                VerticalDivider(width: 8,),
                 TextButton.icon(
-                    onPressed: (){},
-                    icon: Icon(Icons.video_call, color: Colors.purple,),
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.video_call,
+                      color: Colors.purple,
+                    ),
                     label: Text(
                       "Sala",
-                      style: TextStyle(
-                          color: Colors.black
-                      ),
-                    )
-                )
+                      style: TextStyle(color: Colors.black),
+                    ))
               ],
             ),
           )
