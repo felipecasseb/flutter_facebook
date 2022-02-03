@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook/screens/home.dart';
+import 'package:flutter_facebook/screens/principal.dart';
 import 'package:flutter_facebook/uteis/colors_pallet.dart';
 
 void main(){
@@ -8,7 +9,7 @@ void main(){
     theme: ThemeData(
       scaffoldBackgroundColor: ColorsPallet.scaffold
     ),
-    home: Home(),
+    home: Principal(),
     debugShowCheckedModeBanner: false,
   ));
 }
