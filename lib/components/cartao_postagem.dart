@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook/components/imagem_perfil.dart';
 import 'package:flutter_facebook/models/modelos.dart';
 import 'package:flutter_facebook/uteis/colors_pallet.dart';
+import 'package:flutter_facebook/uteis/responsivo.dart';
 import 'package:line_icons/line_icons.dart';
 
 class CartaoPostagem extends StatelessWidget {
@@ -17,35 +18,47 @@ class CartaoPostagem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 8),
-      padding: EdgeInsets.symmetric(vertical: 8),
-      color: Colors.white,
-      child: Column(
-        children: [
-          //cabeçalho
-          Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CabecalhoPostagem(postagem: postagem),
-                Text(postagem.descricao)
-              ],
-            ),
-          ),
-          //imagem postagem
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 8),
-            child: CachedNetworkImage(imageUrl: postagem.urlImagem,),
-          ),
-          //area de estatisticas
-          Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
-            child: EstatisticasPostagem(postagem: postagem,),
-          )
-        ],
+
+    bool isDesktop = Responsivo.isDesktop(context);
+
+    return Card(
+      margin: EdgeInsets.symmetric(vertical: 8, horizontal: isDesktop? 5 : 0),
+      elevation: isDesktop? 1 : 0,
+      shape: isDesktop
+          ? RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10)
       )
+          : null,
+      child: Container(
+          margin: EdgeInsets.symmetric(vertical: 8),
+          padding: EdgeInsets.symmetric(vertical: 8),
+          color: Colors.white,
+          child: Column(
+            children: [
+              //cabeçalho
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CabecalhoPostagem(postagem: postagem),
+                    Text(postagem.descricao)
+                  ],
+                ),
+              ),
+              //imagem postagem
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 8),
+                child: CachedNetworkImage(imageUrl: postagem.urlImagem,),
+              ),
+              //area de estatisticas
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: EstatisticasPostagem(postagem: postagem,),
+              )
+            ],
+          )
+      ),
     );
   }
 }

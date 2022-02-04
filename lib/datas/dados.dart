@@ -2,8 +2,8 @@ import 'package:flutter_facebook/models/modelos.dart';
 import 'package:flutter_facebook/models/postagem.dart';
 
 Usuario usuarioAtual = Usuario(
-    nome: "Jamilton Damasceno",
-    urlImagem: "https://source.unsplash.com/EQFtEzJGERg/800x600");
+    nome: "Felipe Casseb",
+    urlImagem: "https://scontent.fbel7-1.fna.fbcdn.net/v/t39.30808-6/271227737_4658196224234520_954122627897117914_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFLFFAQh69YguTQL6kqgiiW8_y8R-x_74Pz_LxH7H_vgyHPR6aN0l5PHWvQwl4eP6dAGOeXsLhgC0QR0CvF4rZr&_nc_ohc=9_tJJQ2_ba0AX9sZ2fI&_nc_ht=scontent.fbel7-1.fna&oh=00_AT9r9cUg7HciMPPmWumkx8106l1WENrmJCM5OM3f64JCyg&oe=6201F2E0");
 
 /* Lista de usuários online */
 List<Usuario> usuariosOnline = [
@@ -63,6 +63,16 @@ List<Estoria> estorias = [
   Estoria(
       usuario: usuariosOnline[7],
       urlImagem: "https://source.unsplash.com/DOb-2jd0sbc/800x600"),
+  Estoria(
+      usuario: usuariosOnline[2],
+      urlImagem: "https://source.unsplash.com/6dX5TPPM34M/800x600"),
+  Estoria(
+      usuario: usuariosOnline[3],
+      urlImagem: "https://source.unsplash.com/PO7CGnoDFUI/800x600"),
+  Estoria(
+      usuario: usuariosOnline[4],
+      urlImagem: "https://source.unsplash.com/rewyZqUwAqY/800x600"),
+
 ];
 
 /* Lista de postagens */

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook/components/imagem_perfil.dart';
 import 'package:flutter_facebook/models/estoria.dart';
 import 'package:flutter_facebook/uteis/colors_pallet.dart';
+import 'package:flutter_facebook/uteis/responsivo.dart';
 
 class CartaoEstoria extends StatelessWidget {
 

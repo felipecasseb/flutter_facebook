@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook/components/cartao_estoria.dart';
 import 'package:flutter_facebook/datas/dados.dart';
 import 'package:flutter_facebook/models/modelos.dart';
+import 'package:flutter_facebook/uteis/responsivo.dart';
 
 class AreaEstoria extends StatelessWidget {
 
@@ -18,9 +19,12 @@ class AreaEstoria extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    bool isDesktop = Responsivo.isDesktop(context);
+
     return Container(
       height: 200,
-      color: Colors.white,
+      color: isDesktop ? Colors.transparent : Colors.white,
       child: ListView.builder(
         padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
         scrollDirection: Axis.horizontal,
